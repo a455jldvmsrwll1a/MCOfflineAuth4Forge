@@ -1,5 +1,7 @@
 # MCOfflineAuth4Forge
 
+## WORK IN PROGRESS
+
 ![A screenshot.](res/screenshot.png)
 
 ---
