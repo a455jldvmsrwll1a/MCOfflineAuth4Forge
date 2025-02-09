@@ -1,6 +1,6 @@
 # MCOfflineAuth4Forge
 
-## WORK IN PROGRESS
+## WORK IN PROGRESS. NO FUNCTIONAL BUILD IS AVAILABLE.
 
 ![A screenshot.](res/screenshot.png)
 
