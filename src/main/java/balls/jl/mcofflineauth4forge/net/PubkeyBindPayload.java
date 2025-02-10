@@ -32,11 +32,11 @@ public class PubkeyBindPayload implements CustomPacketPayload {
     }
 
     @Override
-    public @NotNull Type<? extends CustomPacketPayload> type() {
-        return new Type<PubkeyBindPayload>(Constants.PUBKEY_BIND_PACKET_ID);
+    public @NotNull Type<PubkeyBindPayload> type() {
+        return new Type<>(Constants.PUBKEY_BIND_PACKET_ID);
     }
 
-    static class Encoder implements StreamEncoder<FriendlyByteBuf, PubkeyBindPayload> {
+    public static class Encoder implements StreamEncoder<FriendlyByteBuf, PubkeyBindPayload> {
 
         @Override
         public void encode(FriendlyByteBuf buf, PubkeyBindPayload payload) {
@@ -45,7 +45,7 @@ public class PubkeyBindPayload implements CustomPacketPayload {
         }
     }
 
-    static class Decoder implements StreamDecoder<FriendlyByteBuf, PubkeyBindPayload> {
+    public static class Decoder implements StreamDecoder<FriendlyByteBuf, PubkeyBindPayload> {
 
         @Override
         public @NotNull PubkeyBindPayload decode(FriendlyByteBuf buf) {
