@@ -25,8 +25,9 @@ For the full guide, check out the [original version](https://github.com/a455jldv
 
 1. Clone the repository and enter the project directory.
 2. Run `./gradlew build` on Linux/Mac and `.\gradlew.bat build` on Windows.
-3. Hopefully it should build just fine.
-4. The compiled JAR can be found in `build/libs/MCOfflineAuth4Forge-*.jar` (without the `-sources`).
+3. Run `./gradlew jarJar` on Linux/Mac and `.\gradlew.bat jarJar` on Windows.
+4. Hopefully it should build just fine.
+5. The compiled JAR can be found in `build/libs/mcofflineauth-*-all.jar` (without the `-sources`).
 
 
 ## Usage (Players)
