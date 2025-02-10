@@ -1,6 +1,12 @@
 package balls.jl.mcofflineauth4forge;
 
+import balls.jl.mcofflineauth4forge.net.LoginChallengePayload;
+import balls.jl.mcofflineauth4forge.net.LoginResponsePayload;
+import balls.jl.mcofflineauth4forge.net.PubkeyBindPayload;
+import balls.jl.mcofflineauth4forge.net.PubkeyQueryPayload;
 import com.mojang.logging.LogUtils;
+import lol.bai.badpackets.api.config.ConfigPackets;
+import lol.bai.badpackets.api.play.PlayPackets;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,8 +22,15 @@ public class ModEvents {
         // Some client setup code
         LOGGER.info("Initialising MCOfflineAuth::Client. (on Forge)");
 
-        event.enqueueWork(() -> {
-            ClientKeyPair.loadOrCreate();
-        });
+        registerPacketPayloads();
+        ClientKeyPair.loadOrCreate();
+    }
+
+    private static void registerPacketPayloads() {
+        ConfigPackets.registerClientChannel(new LoginChallengePayload().type(), LoginChallengePayload.STREAM_CODEC);
+        ConfigPackets.registerServerChannel(new LoginResponsePayload().type(), LoginResponsePayload.STREAM_CODEC);
+
+        PlayPackets.registerClientChannel(new PubkeyQueryPayload().type(), PubkeyQueryPayload.STREAM_CODEC);
+        PlayPackets.registerServerChannel(new PubkeyBindPayload().type(), PubkeyBindPayload.STREAM_CODEC);
     }
 }
