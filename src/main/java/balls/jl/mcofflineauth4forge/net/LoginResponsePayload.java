@@ -30,11 +30,11 @@ public class LoginResponsePayload implements CustomPacketPayload {
     }
 
     @Override
-    public @NotNull Type<? extends CustomPacketPayload> type() {
-        return new Type<LoginResponsePayload>(Constants.LOGIN_RESPONSE_PACKET_ID);
+    public @NotNull Type<LoginResponsePayload> type() {
+        return new Type<>(Constants.LOGIN_RESPONSE_PACKET_ID);
     }
 
-    static class Encoder implements StreamEncoder<FriendlyByteBuf, LoginResponsePayload> {
+    public static class Encoder implements StreamEncoder<FriendlyByteBuf, LoginResponsePayload> {
 
         @Override
         public void encode(FriendlyByteBuf buf, LoginResponsePayload payload) {
@@ -44,7 +44,7 @@ public class LoginResponsePayload implements CustomPacketPayload {
         }
     }
 
-    static class Decoder implements StreamDecoder<FriendlyByteBuf, LoginResponsePayload> {
+    public static class Decoder implements StreamDecoder<FriendlyByteBuf, LoginResponsePayload> {
 
         @Override
         public @NotNull LoginResponsePayload decode(FriendlyByteBuf buf) {
