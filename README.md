@@ -15,7 +15,8 @@ For the full guide, check out the [original version](https://github.com/a455jldv
 
 ## Dependencies
 
-- **TBD**
+- [Minecraft 1.21.4](www.minecraft.net)
+- [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/).
 
 ## Installation
 
