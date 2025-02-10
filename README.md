@@ -1,6 +1,8 @@
 # MCOfflineAuth4Forge
 
-## WORK IN PROGRESS. NO FUNCTIONAL BUILD IS AVAILABLE.
+## WORK IN PROGRESS.
+
+## You can connect to servers but the mod GUI is unavailable.
 
 ![A screenshot.](res/screenshot.png)
 
