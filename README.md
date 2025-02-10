@@ -43,10 +43,10 @@ In most cases, it is extremely simple:
 
 *Got kicked?* The server can be set to reject users without a key already bound. In this case, an admin needs to bind you in advance.
 
-1. Click the **OA** button in the main menu.
-2. Click the long button with the key to copy the key.
-3. Share this key to an admin of the server.
-4. Join the server.
+~~1. Click the **OA** button in the main menu.~~
+~~2. Click the long button with the key to copy the key.~~
+~~3. Share this key to an admin of the server.~~
+~~4. Join the server.~~
 
 #### Unbinding
 
