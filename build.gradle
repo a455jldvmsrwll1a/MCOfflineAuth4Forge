@@ -143,8 +143,9 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-//    jarJar(group: 'lol.bai', name: 'badpackets', version: "${badpackets_version}")
+    jarJar(group: 'lol.bai', name: 'badpackets', version: "[forge-${badpackets_version}]")
     implementation fg.deobf("lol.bai:badpackets:forge-${badpackets_version}")
+
 
 
     // Example mod dependency with JEI
