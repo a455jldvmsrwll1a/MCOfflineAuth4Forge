@@ -18,18 +18,18 @@ public class PubkeyQueryPayload implements CustomPacketPayload {
     }
 
     @Override
-    public @NotNull CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
-        return new CustomPacketPayload.Type<PubkeyQueryPayload>(Constants.PUBKEY_QUERY_PACKET_ID);
+    public @NotNull CustomPacketPayload.Type<PubkeyQueryPayload> type() {
+        return new Type<>(Constants.PUBKEY_QUERY_PACKET_ID);
     }
 
-    static class Encoder implements StreamEncoder<FriendlyByteBuf, PubkeyQueryPayload> {
+    public static class Encoder implements StreamEncoder<FriendlyByteBuf, PubkeyQueryPayload> {
 
         @Override
         public void encode(@NotNull FriendlyByteBuf buf, @NotNull PubkeyQueryPayload payload) {
         }
     }
 
-    static class Decoder implements StreamDecoder<FriendlyByteBuf, PubkeyQueryPayload> {
+    public static class Decoder implements StreamDecoder<FriendlyByteBuf, PubkeyQueryPayload> {
 
         @Override
         public @NotNull PubkeyQueryPayload decode(@NotNull FriendlyByteBuf buf) {

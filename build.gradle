@@ -128,7 +128,7 @@ repositories {
     //     dir 'libs'
     // }
     maven {
-        url "https://maven2.bai.lol"
+        url "https://maven4.bai.lol"
         content {
             includeGroup "lol.bai"
         }
@@ -143,7 +143,7 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    jarJar(group: 'lol.bai', name: 'badpackets', version: "${badpackets_version}")
+//    jarJar(group: 'lol.bai', name: 'badpackets', version: "${badpackets_version}")
     implementation fg.deobf("lol.bai:badpackets:forge-${badpackets_version}")
 
 
