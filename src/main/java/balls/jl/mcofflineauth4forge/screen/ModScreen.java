@@ -56,7 +56,7 @@ public class ModScreen extends Screen {
     public void render(GuiGraphics gfx, int mouseX, int mouseY, float delta) {
         super.render(gfx, mouseX, mouseY, delta);
 
-        gfx.drawString(this.font, "MC Offline Auth Configuration", 15, 40 - this.font.lineHeight - 10, 0xFFA719FF, true);
+        gfx.drawString(this.font, "MC Offline Auth 4 Forge Configuration", 15, 40 - this.font.lineHeight - 10, 0xFFA719FF, true);
         gfx.drawString(this.font, "By JL :>", 15, 60 - this.font.lineHeight - 10, 0xFF85F1FF, true);
         gfx.drawString(this.font, "Allows servers to have some form of authentication without using", 15, 80 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
         gfx.drawString(this.font, "external authentication systems, lending itself to offline servers.", 15, 90 - this.font.lineHeight - 10, 0xFFFFFFFF, true);

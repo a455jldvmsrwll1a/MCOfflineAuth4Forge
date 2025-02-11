@@ -41,7 +41,7 @@ public class WipeConfirmationScreen extends Screen {
     public void render(GuiGraphics gfx, int mouseX, int mouseY, float delta) {
         super.render(gfx, mouseX, mouseY, delta);
 
-        gfx.drawString(this.font, "MC Offline Auth Configuration", 15, 40 - this.font.lineHeight - 10, 0xFFA719FF, true);
+        gfx.drawString(this.font, "MC Offline Auth 4 Forge Configuration", 15, 40 - this.font.lineHeight - 10, 0xFFA719FF, true);
         gfx.drawString(this.font, "§lConfirm deletion of the key-pair?§r", 15, 60 - this.font.lineHeight - 10, 0xFF0000, true);
         gfx.drawString(this.font, "After deleting, the key-pair will no longer be usable.", 15, 80 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
         gfx.drawString(this.font, "Servers with your old key §nwill reject you until you bind the new public key§r.", 15, 90 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
