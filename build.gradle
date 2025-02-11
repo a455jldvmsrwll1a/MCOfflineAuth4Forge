@@ -1,17 +1,10 @@
-buildscript {
-    dependencies {
-        classpath "org.spongepowered:mixingradle:0.7.+"
-    }
-}
-
 plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
-
-apply plugin: "org.spongepowered.mixin"
 
 version = mod_version
 group = mod_group_id
@@ -143,6 +136,8 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
     jarJar(group: 'lol.bai', name: 'badpackets', version: "[forge-${badpackets_version}]")
     implementation fg.deobf("lol.bai:badpackets:forge-${badpackets_version}")
 
@@ -234,4 +229,9 @@ sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
+}
+
+mixin {
+    add sourceSets.main, 'mcofflineauth4forge.main.mixins.refmap.json'
+    config 'mcofflineauth4forge.main.mixins.json'
 }
