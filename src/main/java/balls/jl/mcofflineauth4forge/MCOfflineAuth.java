@@ -1,6 +1,8 @@
 package balls.jl.mcofflineauth4forge;
 
+import balls.jl.mcofflineauth4forge.screen.ModScreen;
 import com.mojang.logging.LogUtils;
+import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -15,5 +17,9 @@ public class MCOfflineAuth {
     public MCOfflineAuth(FMLJavaModLoadingContext context) {
         MinecraftForge.EVENT_BUS.register(this);
         LOGGER.warn("MC Offline Auth 4 Forge has no server support; only client-side functionality is currently implemented.");
+
+        context.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class,
+                () -> new ConfigScreenHandler.ConfigScreenFactory(((minecraft, screen) -> new ModScreen(screen)))
+        );
     }
 }
