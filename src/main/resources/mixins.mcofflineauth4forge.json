@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "balls.jl.mcofflineauth4forge.mixin",
   "compatibilityLevel": "JAVA_21",
+  "refmap": "mixins.mcofflineauth4forge.refmap.json",
   "client": [
     "TitleScreenMixin"
   ],
