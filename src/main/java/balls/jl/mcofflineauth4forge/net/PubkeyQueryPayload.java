@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Tells the client to send over its public key.
  */
 public class PubkeyQueryPayload implements CustomPacketPayload {
-    public static final StreamCodec STREAM_CODEC = StreamCodec.of(new PubkeyQueryPayload.Encoder(), new PubkeyQueryPayload.Decoder());
+    public static final StreamCodec<FriendlyByteBuf, PubkeyQueryPayload> STREAM_CODEC = StreamCodec.of(new PubkeyQueryPayload.Encoder(), new PubkeyQueryPayload.Decoder());
 
     public PubkeyQueryPayload() {
     }

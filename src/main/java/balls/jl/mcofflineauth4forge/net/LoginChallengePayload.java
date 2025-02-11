@@ -14,7 +14,7 @@ import java.util.UUID;
  * Tells the client to sign the given data and reply with the signature.
  */
 public class LoginChallengePayload implements CustomPacketPayload {
-    public static final StreamCodec STREAM_CODEC = StreamCodec.of(new Encoder(), new Decoder());
+    public static final StreamCodec<FriendlyByteBuf, LoginChallengePayload> STREAM_CODEC = StreamCodec.of(new Encoder(), new Decoder());
 
     public UUID id;
     public byte[] data;
