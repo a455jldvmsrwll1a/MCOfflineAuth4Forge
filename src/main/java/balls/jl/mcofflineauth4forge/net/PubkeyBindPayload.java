@@ -18,7 +18,7 @@ import java.security.spec.X509EncodedKeySpec;
  * Tells the server to bind the given public key with the user.
  */
 public class PubkeyBindPayload implements CustomPacketPayload {
-    public static final StreamCodec STREAM_CODEC = StreamCodec.of(new PubkeyBindPayload.Encoder(), new PubkeyBindPayload.Decoder());
+    public static final StreamCodec<FriendlyByteBuf, PubkeyBindPayload> STREAM_CODEC = StreamCodec.of(new PubkeyBindPayload.Encoder(), new PubkeyBindPayload.Decoder());
 
     public String user;
     public PublicKey publicKey;
