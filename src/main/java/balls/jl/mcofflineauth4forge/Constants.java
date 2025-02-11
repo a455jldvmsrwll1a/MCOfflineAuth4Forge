@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Constants {
-    public static final String MOD_ID = "mcofflineauth";
+    public static final String MOD_ID = "mcofflineauth4forge";
 
     public static final String ALGORITHM = "Ed25519";
 
