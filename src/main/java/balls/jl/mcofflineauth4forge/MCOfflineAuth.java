@@ -14,5 +14,6 @@ public class MCOfflineAuth {
 
     public MCOfflineAuth(FMLJavaModLoadingContext context) {
         MinecraftForge.EVENT_BUS.register(this);
+        LOGGER.warn("MC Offline Auth 4 Forge has no server support; only client-side functionality is currently implemented.");
     }
 }
