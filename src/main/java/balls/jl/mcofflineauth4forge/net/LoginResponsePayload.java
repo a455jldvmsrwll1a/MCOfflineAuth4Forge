@@ -14,7 +14,7 @@ import java.util.UUID;
  * Client's response to the server, providing the signature for the challenge data.
  */
 public class LoginResponsePayload implements CustomPacketPayload {
-    public static final StreamCodec STREAM_CODEC = StreamCodec.of(new LoginResponsePayload.Encoder(), new LoginResponsePayload.Decoder());
+    public static final StreamCodec<FriendlyByteBuf, LoginResponsePayload> STREAM_CODEC = StreamCodec.of(new LoginResponsePayload.Encoder(), new LoginResponsePayload.Decoder());
 
     public UUID id;
     public String user;
