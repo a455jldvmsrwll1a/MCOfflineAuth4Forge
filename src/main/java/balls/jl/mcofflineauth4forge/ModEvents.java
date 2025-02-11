@@ -10,8 +10,6 @@ import lol.bai.badpackets.api.config.ClientConfigContext;
 import lol.bai.badpackets.api.config.ConfigPackets;
 import lol.bai.badpackets.api.play.ClientPlayContext;
 import lol.bai.badpackets.api.play.PlayPackets;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -34,6 +32,7 @@ public class ModEvents {
 
         registerPacketPayloads();
         registerEventCallbacks();
+
         ClientKeyPair.loadOrCreate();
     }
 
