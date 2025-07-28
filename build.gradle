@@ -79,6 +79,9 @@ minecraft {
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
+
+            // https://gist.github.com/PaintNinja/ad82c224aecee25efac1ea3e2cf19b91
+            property 'eventbus.api.strictRuntimeChecks', 'true'
         }
 
         client {
@@ -139,6 +142,8 @@ dependencies {
     jarJar(group: 'lol.bai', name: 'badpackets', version: "[forge-${badpackets_version}]")
     implementation fg.deobf("lol.bai:badpackets:forge-${badpackets_version}")
 
+    // https://gist.github.com/PaintNinja/ad82c224aecee25efac1ea3e2cf19b91
+    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0-beta.7'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
 

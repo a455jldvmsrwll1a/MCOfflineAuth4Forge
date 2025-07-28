@@ -11,7 +11,7 @@ import lol.bai.badpackets.api.config.ConfigPackets;
 import lol.bai.badpackets.api.play.ClientPlayContext;
 import lol.bai.badpackets.api.play.PlayPackets;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
