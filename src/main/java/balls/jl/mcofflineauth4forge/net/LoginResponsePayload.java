@@ -17,16 +17,14 @@ public class LoginResponsePayload implements CustomPacketPayload {
     public static final StreamCodec<FriendlyByteBuf, LoginResponsePayload> STREAM_CODEC = StreamCodec.of(new LoginResponsePayload.Encoder(), new LoginResponsePayload.Decoder());
 
     public UUID id;
-    public String user;
     public byte[] signature;
 
     public LoginResponsePayload() {
     }
 
-    public LoginResponsePayload(UUID id, String user, byte[] signature) {
+    public LoginResponsePayload(UUID id, byte[] signature) {
         this.id = id;
         this.signature = signature;
-        this.user = user;
     }
 
     @Override
@@ -39,7 +37,6 @@ public class LoginResponsePayload implements CustomPacketPayload {
         @Override
         public void encode(FriendlyByteBuf buf, LoginResponsePayload payload) {
             buf.writeUUID(payload.id);
-            buf.writeUtf(payload.user);
             buf.writeByteArray(payload.signature);
         }
     }
@@ -48,7 +45,7 @@ public class LoginResponsePayload implements CustomPacketPayload {
 
         @Override
         public @NotNull LoginResponsePayload decode(FriendlyByteBuf buf) {
-            return new LoginResponsePayload(buf.readUUID(), buf.readUtf(), buf.readByteArray());
+            return new LoginResponsePayload(buf.readUUID(), buf.readByteArray());
         }
     }
 }

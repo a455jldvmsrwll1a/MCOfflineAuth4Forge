@@ -18,13 +18,15 @@ public class LoginChallengePayload implements CustomPacketPayload {
 
     public UUID id;
     public byte[] data;
+    public String user;
 
     public LoginChallengePayload() {
     }
 
-    public LoginChallengePayload(UUID id, byte[] data) {
+    public LoginChallengePayload(UUID id, byte[] data, String user) {
         this.id = id;
         this.data = data;
+        this.user = user;
     }
 
     @Override
@@ -38,6 +40,7 @@ public class LoginChallengePayload implements CustomPacketPayload {
         public void encode(FriendlyByteBuf buf, LoginChallengePayload payload) {
             buf.writeUUID(payload.id);
             buf.writeByteArray(payload.data);
+            buf.writeUtf(payload.user);
         }
     }
 
@@ -45,7 +48,7 @@ public class LoginChallengePayload implements CustomPacketPayload {
 
         @Override
         public @NotNull LoginChallengePayload decode(FriendlyByteBuf buf) {
-            return new LoginChallengePayload(buf.readUUID(), buf.readByteArray());
+            return new LoginChallengePayload(buf.readUUID(), buf.readByteArray(), buf.readUtf());
         }
     }
 }
