@@ -10,12 +10,14 @@ import lol.bai.badpackets.api.config.ClientConfigContext;
 import lol.bai.badpackets.api.config.ConfigPackets;
 import lol.bai.badpackets.api.play.ClientPlayContext;
 import lol.bai.badpackets.api.play.PlayPackets;
+import net.minecraft.core.UUIDUtil;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
@@ -54,18 +56,18 @@ public class ModEvents {
         @Override
         public void receive(ClientConfigContext context, LoginChallengePayload payload) {
             context.client().execute(() -> {
-                String name = context.client().getGameProfile().getName();
-                if (name == null) {
-                    LOGGER.error("Could not retrieve the username.");
-                    return;
-                }
-
                 try {
                     Signature sig = Signature.getInstance(Constants.ALGORITHM);
                     sig.initSign(ClientKeyPair.KEY_PAIR.getPrivate());
-                    sig.update(payload.data);
 
-                    context.send(new LoginResponsePayload(payload.id, name, sig.sign()));
+                    // Include the challenge UUID.
+                    sig.update(UUIDUtil.uuidToByteArray(payload.id));
+
+                    sig.update(payload.data);
+                    // Include username (server POV) as well.
+                    sig.update(payload.user.getBytes(StandardCharsets.UTF_8));
+
+                    context.send(new LoginResponsePayload(payload.id, sig.sign()));
                 } catch (NoSuchAlgorithmException | SignatureException | InvalidKeyException e) {
                     throw new RuntimeException(e);
                 }
