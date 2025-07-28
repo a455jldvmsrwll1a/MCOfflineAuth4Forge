@@ -44,12 +44,14 @@ public class ModScreen extends Screen {
 
         Button explorerBtnWidget = Button.builder(Component.literal("Open Folder"), (btn) -> net.minecraft.Util.getPlatform().openPath(Constants.MOD_DIR)).tooltip(Tooltip.create(Component.literal("Open the mod's directory with the native file manager."))).bounds(15 + 80 + 80 + 10 + 10, height - this.font.lineHeight - 20, 100, 20).build();
         Button cancelBtnWidget = Button.builder(Component.literal("Back"), (btn) -> close()).bounds(width - 80 - 15, height - this.font.lineHeight - 20, 80, 20).build();
+        Button modPageWidget = Button.builder(Component.literal("Mod Page"), (btn) -> net.minecraft.Util.getPlatform().openUri("https://github.com/a455jldvmsrwll1a/MCOfflineAuth?tab=readme-ov-file#usage-players")).tooltip(Tooltip.create(Component.literal("Visit mod page on Github."))).bounds(15, 130 - this.font.lineHeight - 20, 80, 20).build();
 
         this.addRenderableWidget(pkBtnWidget);
         this.addRenderableWidget(resetBtnWidget);
         this.addRenderableWidget(reloadBtnWidget);
         this.addRenderableWidget(explorerBtnWidget);
         this.addRenderableWidget(cancelBtnWidget);
+        this.addRenderableWidget(modPageWidget);
     }
 
     @Override
@@ -57,13 +59,10 @@ public class ModScreen extends Screen {
         super.render(gfx, mouseX, mouseY, delta);
 
         gfx.drawString(this.font, "MC Offline Auth 4 Forge Configuration", 15, 40 - this.font.lineHeight - 10, 0xFFA719FF, true);
-        gfx.drawString(this.font, "By JL :>", 15, 60 - this.font.lineHeight - 10, 0xFF85F1FF, true);
+        gfx.drawString(this.font, "By jldmw1a", 15, 60 - this.font.lineHeight - 10, 0xFF85F1FF, true);
         gfx.drawString(this.font, "Allows servers to have some form of authentication without using", 15, 80 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
         gfx.drawString(this.font, "external authentication systems, lending itself to offline servers.", 15, 90 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
-        gfx.drawString(this.font, "DISCLAIMER: THIS MOD IS EXPERIMENTAL SOFTWARE, IT HAS NOT UNDERGONE", 15, 105 - this.font.lineHeight - 10, 0xFFEB9B34, true);
-        gfx.drawString(this.font, "EXTENSIVE TESTING. I AM NOT RESPONSIBLE FOR ANY GRIEFED SERVERS.", 15, 115 - this.font.lineHeight - 10, 0xFFEB9B34, true);
-        gfx.drawString(this.font, "IT IS ALWAYS BETTER TO AVOID OFFLINE MODE IF POSSIBLE.", 15, 125 - this.font.lineHeight - 10, 0xFFEB9B34, true);
-        gfx.drawString(this.font, "USE THIS MOD AT YOUR OWN RISK.", 15, 135 - this.font.lineHeight - 10, 0xFFEB9B34, true);
+        gfx.drawString(this.font, "THIS MOD IS EXPERIMENTAL SOFTWARE. See webpage below for usage guide.", 15, 105 - this.font.lineHeight - 10, 0xFFEB9B34, true);
         gfx.drawString(this.font, "Public key: ", 15, 150 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
     }
 
