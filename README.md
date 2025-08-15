@@ -11,7 +11,7 @@ For the full guide, check out the [original version](https://github.com/a455jldv
 
 ## Dependencies
 
-- [Minecraft 1.21.4](www.minecraft.net)
+- [Minecraft 1.21.6](www.minecraft.net)
 - [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/).
 
 ## Installation
