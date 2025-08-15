@@ -11,12 +11,12 @@ For the full guide, check out the [original version](https://github.com/a455jldv
 
 ## Dependencies
 
-- [Minecraft 1.21.6](www.minecraft.net)
+- [Minecraft 1.21.6](https://www.minecraft.net/)
 - [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/).
 
 ## Installation
 
-**Just need to download the mod? You can use the precompiled binaries which can be found in the [Releases](https://github.com/a455jldvmsrwll1a/MCOfflineAuth4Forge/releases) section.**
+**Just need to download the mod? You can use the precompiled binaries which can be found in the [Releases](https://github.com/a455jldvmsrwll1a/MCOfflineAuth4Forge/releases/) section.**
 
 **(Work in Progress)** Building from source:
 
